@@ -1,0 +1,147 @@
+@media(max-width:1300px){
+    .HomeProject img{
+        max-width: 500px;
+    }
+    .HomeProject p{
+        width: auto;
+    }    
+}
+@media(max-width:1000px) {
+    .PrCards {
+        margin-top: 0px;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .PrCards img {
+        width: 100%;
+    }
+
+    .PrCards h3 {
+        margin-top: 10px;
+    }
+
+    .NewsCard .Container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media(max-width:950px) {
+    .map .Container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .map iframe {
+        max-width: 100%;
+    }
+
+    .ProjectCards h1 {
+        font-size: 40px;
+    }
+    .Service2__wrapper{
+        flex-direction: column;
+        
+    }
+    .HomeProject__Wrapper{
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+}
+
+@media(max-width:850px) {
+    .NewsCard .Container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .us{
+        padding: 10px;
+    }
+}
+
+@media(max-width:700px) {
+    .ContactSection .Container {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .company {
+        padding: 10px !important;
+    }
+    .HomeProject{
+        padding: 10px !important;
+    }
+}
+
+@media(max-width:600px) {
+    .Service2{
+        padding: 10px;
+    }
+    .service{
+        margin-top: 50px;
+        padding: 10px;
+    }
+    .Hero h1 {
+        font-size: 25px;
+    }
+
+    .Hero p {
+        font-size: 15px;
+    }
+
+    .ProjectCards h3 {
+        font-size: 20px;
+    }
+
+    .ProjectCards h2 {
+        font-size: 25px;
+    }
+    .HomeProject img{
+        max-width: 100% !important;
+    }
+}
+
+@media(max-width:500px) {
+    .company h1 {
+        font-size: 30px;
+    }
+
+    .ProjectCards {
+        padding: 10px;
+    }
+
+    .PrCards {
+        padding: 10px;
+    }
+
+    .ProjectCards h1 {
+        font-size: 30px;
+    }
+
+    .NewsCard .Container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .NewsCard{
+        padding: 10px;
+    }
+    .sertive_content{
+        padding: 0px !important;
+    }
+    .Title h1{
+        font-size: 30px;
+    }
+}
+
+@media(max-width:400px) {
+    .Service2 h1{
+        font-size: 30px;
+    }
+    .Hero h1 {
+        font-size: 25px;
+    }
+
+    .Hero p {
+        font-size: 10px;
+    }
+}

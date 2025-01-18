@@ -1,0 +1,58 @@
+.big_company {
+    background: #79A01B;
+    padding: 40px 0;
+}
+
+.company_wrapper {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 20px;
+}
+
+.company_card h4 {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 8px 0;
+    height: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+}
+
+.company_card p {
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    color: #FFFFFF;
+    width: 150px;
+    margin: 0 auto;
+
+}
+
+.company_card img {
+    margin: 0 auto;
+}
+
+@media(max-width:1450px) {
+    .big_company {
+        padding: 40px 50px;
+
+    }
+}
+
+@media(max-width:1400px) {
+    .company_wrapper {
+        flex-wrap: wrap;
+    }
+}
+
+@media(max-width:470px) {
+    .company_wrapper {
+        flex-direction: column;
+    }
+}

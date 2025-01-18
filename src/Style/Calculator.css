@@ -1,0 +1,254 @@
+.calculator {
+    background: #53493C;
+    padding: 51px 100px;
+    position: relative;
+}
+
+.calculator h1 {
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 38px;
+    color: #FFFFFF;
+    position: relative;
+    margin-bottom: 50px;
+
+}
+
+.calculator::before {
+    content: "";
+    width: 270px;
+    height: 25px;
+    background: #FFB337;
+    display: block;
+    position: absolute;
+    left: -30px;
+    top: 60px;
+}
+
+.calculator_wrapper {
+    display: flex;
+    align-items: start;
+    gap: 60px;
+}
+
+.calculator_material h4 {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    margin-bottom: 14px;
+}
+
+.calculator_material div {
+    display: flex;
+    align-items: center;
+}
+
+
+.calculator_material div button {
+    width: 160px;
+    height: 50px;
+    border: 1px solid #FFFFFF;
+    background: transparent;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    transition: 0.5s;
+}
+
+.calculator_materialActive {
+    color: #59780E !important;
+    background: #fff !important;
+}
+
+.calculator_material input {
+    margin-bottom: 20px;
+    border: 1px solid #FFFFFF;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding-left: 17px;
+    width: 320px;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    outline: none;
+}
+
+.calculator_btn h4 {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    margin-bottom: 14px;
+}
+
+.cal_btn_wrapper {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.cal_btn_wrapper button {
+    width: 109px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 18px;
+    border: 1px solid #FFFFFF;
+    background: transparent;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
+    overflow: hidden;
+    transition: 0.5 s;
+}
+
+.cal_btn_wrapperActive {
+    background: #fff !important;
+    color: #59780E !important;
+}
+
+.big_btn_wr {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+
+.small_btn1 {
+    background: #fff;
+    height: 73px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    color: #000000;
+    border: 0;
+    width: 200px;
+    display: block;
+}
+
+.small_btn {
+    background: #FFB337;
+    height: 73px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    color: #000000;
+    display: block;
+    width: 200px;
+}
+
+.small_btn_wr h3 {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #FFFFFF;
+    display: block;
+    margin-top: 10px;
+    height: 33px;
+    width: 200px;
+}
+
+.big_btn_wr {
+    margin-top: 10px;
+}
+
+@media(max-width:1190px) {
+    .calculator_wrapper {
+        flex-direction: column;
+    }
+
+
+}
+
+@media(max-width:950px) {
+    .calculator {
+        padding: 50px 0px;
+    }
+}
+
+@media(max-width:720px) {
+
+
+    .cal_btn_wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+
+    .calculator::before {
+        content: "";
+        width: 270px;
+        height: 25px;
+        background: #FFB337;
+        display: block;
+        position: absolute;
+        left: -40px;
+        top: 60px;
+    }
+
+    .calculator h1 {
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 38px;
+        color: #FFFFFF;
+        margin-left: 50px;
+        position: relative;
+        margin-bottom: 50px;
+    }
+}
+
+@media(max-width:415px) {
+    .cal_btn_wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .calculator h1 {
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 38px;
+        color: #FFFFFF;
+        margin-left: 50px;
+        position: relative;
+        margin-bottom: 50px;
+    }
+
+    .calculator input {
+        width: 100% !important;
+    }
+
+}
+
+@media(max-width:380px){
+    .Metal__wrapper{
+        flex-direction: column;
+        width: 100%;
+    }
+    .Metal__wrapper button{
+        width: 100% !important;
+    }
+    .calculator_material{
+        width: 100%;
+    }
+}

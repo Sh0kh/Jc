@@ -1,0 +1,46 @@
+.house {
+    background: #E5E5E5;
+    padding: 75px 0 85px;
+    position: relative;
+}
+
+.house_content h1 {
+    font-weight: bold;
+    font-size: 27px;
+    line-height: 32px;
+    color: #000000;
+    margin-bottom: 21px;
+}
+
+.house_content p {
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 24px;
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+.house_content button {
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 24px;
+    color: #000000;
+    border-bottom: 1px dashed #000000;
+    padding-bottom: 5px;
+    transition: .2s all linear;
+    margin-top: 25px;
+    display: inline-block;
+}
+
+@media(max-width:770px) {
+    .house_wrapper {
+        flex-direction: column;
+    }
+
+    .house_content {
+        padding-left: 20px;
+    }
+    .Houseline{
+        display: none;
+    }
+}

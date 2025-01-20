@@ -7,7 +7,8 @@ import foto2 from '../../img/photo_2025-01-04_10-43-18.jpg'
 import foto3 from '../../img/photo_2025-01-13_19-21-24.jpg'
 import foto4 from '../../img/photo_2025-01-14_10-25-41.jpg'
 import foto5 from '../../img/photo_2025-01-18_00-53-09.jpg'
-
+import { useTranslation } from "react-i18next";
+import '../../i18n/i18n'; 
 export default function Gallary() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -54,17 +55,25 @@ export default function Gallary() {
 
     const modalContent = images[currentIndex];
 
+
+
+    const { t, i18n } = useTranslation();
+    const lan = localStorage.getItem('i18nextLng')    
+    const changeLanguage = (lng) => {
+        i18n.changeLanguage(lng); // Переключение языка
+        setLan(lng)
+     }
     return (
         <section id="gallary" className="gallary">
-            <h1>Photo Gallery</h1>
+            <h1>{t('Gallary-Title')}</h1>
             <Swiper
                 spaceBetween={10}
                 loop={true}
                 breakpoints={{
                     0: {
-                        slidesPerView: 1, // Для телефонов (меньше 768px) показывается 1 слайд
+                        slidesPerView: 2, // Для телефонов (меньше 768px) показывается 1 слайд
                     },
-                    768: {
+                    500: {
                         slidesPerView: 2, // Для планшетов показывается 2 слайда
                     },
                     1024: {

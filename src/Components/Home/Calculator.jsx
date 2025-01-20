@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../../Style/Calculator.css";
 import { useTranslation } from "react-i18next";
+import Skfoto from '../../img/sk.png'
 
 export default function Calculator() {
     const { t, i18n } = useTranslation();
@@ -63,6 +64,7 @@ export default function Calculator() {
     return (
         <section id="project" className="calculator">
             <div className="Container">
+                <img className="SKFOTO w-[100px] cursor-pointer absolute right-[320px] top-[350px] rotate-[20deg]" src={Skfoto} alt="foto" />
                 <h1>{t('CalculatorTitle')}</h1>
                 <div className="calculator_wrapper">
                     <div className="calculator_material">
@@ -111,6 +113,11 @@ export default function Calculator() {
                             </div>
                         </div>
                     </div>
+                </div>
+                <div className="border-[#FFB337] border-[2px] mt-[30px] p-[10px]">
+                    <p className="text-[#FFB337] text-[15px]">
+                      {t("CalculatorSk")}
+                    </p>
                 </div>
                 <div className="border-[#B3A99D] border-[1px] mt-[30px] p-[10px]">
                     <p className="text-[#B3A99D] text-[15px]">

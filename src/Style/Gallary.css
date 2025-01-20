@@ -174,4 +174,7 @@
         width: 170px;
         height: 200px;
     }
+.gallary_card img, video{
+    width: 85%;
+}
 }

@@ -215,7 +215,7 @@
 
 @media(max-width:550px) {
   .card_parag {
-    width: 100%;
+    width: 90%;
   }
   .paragraph_content p{
     width: 100%;

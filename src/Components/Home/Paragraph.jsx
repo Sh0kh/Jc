@@ -1,17 +1,26 @@
 import React, { useState } from "react";
 import ParagraphCard from "../others/ParagraphCard";
 import "../../Style/Paragraph.css";
-
+import { useTranslation } from "react-i18next";
+import '../../i18n/i18n'; // Убедитесь, что инициализация i18next вызывается
 export default function Paragraph() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const { t, i18n } = useTranslation();
+    const lan = localStorage.getItem('i18nextLng')    
+    const changeLanguage = (lng) => {
+        i18n.changeLanguage(lng); // Переключение языка
+        setLan(lng)
+    };
+
 
   const items = [
-    "Trenchless pipe laying",
-    "Controlled puncture under railway and auto road",
-    "Laying of electrical cables and fiber-optic lines",
-    "Trenchless gas pipeline laying",
-    "Trenchless gas pipeline laying",
-    "Plumbing using HDD method",
+    t('P-Title1'),
+    t('P-Title2'),
+    t('P-Title3'),
+    t('P-Title4'),
+    t('P-Title5'),
+    t('P-Title6'),
+   
   ];
 
   return (
@@ -30,14 +39,14 @@ export default function Paragraph() {
           </div>
           <div className="paragraph_content">
             <h1>{items[activeIndex]}</h1>
-            <p>After watching our video clip, you will receive answers to the following questions:</p>
+            <p>{t('P-Plus1')}</p>
             <ul>
-              <li>What is horizontal directional drilling and what are its benefits?</li>
-              <li>What communications can be laid using HDD method?</li>
-              <li>Which is more profitable: laying the pipeline using the HDD method or in an open trench?</li>
+              <li>{t('P-Plus2')}</li>
+              <li>{t('P-Plus3')}</li>
+              <li>{t('P-Plus4')}</li>
             </ul>
 
-            This video also clearly demonstrates the drilling process, from executing a controlled pilot well, expanding the well, and ending with pipe pulling.
+            {t('P-Plus5')}
           </div>
         </div>
       </div>

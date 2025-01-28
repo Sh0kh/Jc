@@ -223,6 +223,25 @@
         gap: 10px;
     }
 }
+@media(max-width:530px){
+    .header_content li a{
+        font-size: 15px !important;
+    }
+}
+
+@media(max-width:490px){
+    .header_content{
+        display: grid !important;
+        grid-template-columns: repeat(3,1fr) !important;
+        gap: 10px;
+    }
+    .headerNav{
+        height: auto;
+    }
+    .header_content li{
+        text-align: center;
+    }
+}
 
 @media(max-width:480px) {
     .p-\[20px\] .Container {

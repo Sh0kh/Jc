@@ -1,15 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../../Style/Calculator.css";
 import { useTranslation } from "react-i18next";
-import Skfoto from '../../img/sk.png'
+import Skfoto from '../../img/sk.png';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // AOS kutubxonasini import qilish
 
 export default function Calculator() {
     const { t, i18n } = useTranslation();
 
-    const [material, setMaterial] = useState("Polyethylene"); // Default material
-    const [diameter, setDiameter] = useState(110); // Selected diameter
-    const [price, setPrice] = useState(350000); // Fetched price
-    const [pipeLength, setPipeLength] = useState("1"); // Pipe length as string
+    const [material, setMaterial] = useState("Polyethylene");
+    const [diameter, setDiameter] = useState(110);
+    const [price, setPrice] = useState(350000);
+    const [pipeLength, setPipeLength] = useState("1");
 
     const pipeData = [
         { diameter: 110, polyethylene: 350000, steel: 370000 },
@@ -55,37 +57,52 @@ export default function Calculator() {
 
     const handlePipeLengthChange = (e) => {
         const inputValue = e.target.value;
-        // Позволяем пустое значение или числа
         if (/^\d*$/.test(inputValue)) {
             setPipeLength(inputValue);
         }
     };
 
+    // AOS init function
+    useEffect(() => {
+        AOS.init({ duration:2000 });
+    }, []);
+
     return (
         <section id="project" className="calculator">
             <div className="Container">
-                <img className="SKFOTO w-[100px] cursor-pointer absolute right-[320px] top-[350px] rotate-[20deg]" src={Skfoto} alt="foto" />
-                <h1>{t('CalculatorTitle')}</h1>
+                {/* SKFOTO rasmiga scroll bo‘lganda ko‘rinish berish */}
+                <img
+                    className="SKFOTO w-[100px] cursor-pointer absolute right-[320px] top-[350px] rotate-[20deg]"
+                    src={Skfoto}
+                    alt="foto"
+                    data-aos="zoom-in" // AOS animatsiyasini qo‘shish
+                />
+                <h1 data-aos="fade-right">{t('CalculatorTitle')}</h1>
                 <div className="calculator_wrapper">
                     <div className="calculator_material">
                         <h4>{t('CalculatorTitle2')}</h4>
                         <div className="Metal__wrapper">
-                            <button className={material === "Polyethylene" ? 'calculator_materialActive' : ''} onClick={() => handleMaterialChange("Polyethylene")}>
+                            <button
+                                className={material === "Polyethylene" ? 'calculator_materialActive' : ''}
+                                onClick={() => handleMaterialChange("Polyethylene")}
+                            >
                                 {t('metal1')}
                             </button>
-                            <button className={material === "Steel" ? 'calculator_materialActive' : ''} onClick={() => handleMaterialChange("Steel")}>
+                            <button
+                                className={material === "Steel" ? 'calculator_materialActive' : ''}
+                                onClick={() => handleMaterialChange("Steel")}
+                            >
                                 {t('metal2')}
                             </button>
                         </div>
 
                         <h4>{t('MaterialDm')}</h4>
                         <input
-                            type="text" // Используем текстовый инпут
-                            value={pipeLength} // Привязка к состоянию
-                            onChange={handlePipeLengthChange} // Обновление состояния при изменении
+                            type="text"
+                            value={pipeLength}
+                            onChange={handlePipeLengthChange}
                             placeholder="Enter length"
                         />
-
                     </div>
 
                     <div className="calculator_btn">
@@ -109,19 +126,18 @@ export default function Calculator() {
                                         ? `${(price * parseInt(pipeLength || 0)).toLocaleString()} uzs`
                                         : "0 uzs"}
                                 </button>
-                                {/* <h3>Price including VAT</h3> */}
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="border-[#FFB337] border-[2px] mt-[30px] p-[10px]">
                     <p className="text-[#FFB337] text-[15px]">
-                      {t("CalculatorSk")}
+                        {t("CalculatorSk")}
                     </p>
                 </div>
                 <div className="border-[#B3A99D] border-[1px] mt-[30px] p-[10px]">
                     <p className="text-[#B3A99D] text-[15px]">
-                      {t("CalculatorText")}
+                        {t("CalculatorText")}
                     </p>
                 </div>
             </div>

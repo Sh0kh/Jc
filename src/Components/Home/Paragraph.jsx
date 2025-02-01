@@ -1,17 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ParagraphCard from "../others/ParagraphCard";
 import "../../Style/Paragraph.css";
 import { useTranslation } from "react-i18next";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 import '../../i18n/i18n'; // Убедитесь, что инициализация i18next вызывается
+
 export default function Paragraph() {
   const [activeIndex, setActiveIndex] = useState(0);
   const { t, i18n } = useTranslation();
-    const lan = localStorage.getItem('i18nextLng')    
-    const changeLanguage = (lng) => {
-        i18n.changeLanguage(lng); // Переключение языка
-        setLan(lng)
-    };
+  const lan = localStorage.getItem('i18nextLng');  // Здесь у нас уже правильный доступ к текущему языку
 
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng); // Переключение языка
+    localStorage.setItem('i18nextLng', lng);  // Язык сохраняем в localStorage
+  };
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
 
   const items = [
     t('P-Title1'),
@@ -20,7 +27,6 @@ export default function Paragraph() {
     t('P-Title4'),
     t('P-Title5'),
     t('P-Title6'),
-   
   ];
 
   return (
@@ -37,9 +43,9 @@ export default function Paragraph() {
               />
             ))}
           </div>
-          <div className="paragraph_content">
-            <h1>{items[activeIndex]}</h1>
-            <p>{t('P-Plus1')}</p>
+          <div className="paragraph_content" >
+            <h1 data-aos="fade-right">{items[activeIndex]}</h1>
+            <p >{t('P-Plus1')}</p>
             <ul>
               <li>{t('P-Plus2')}</li>
               <li>{t('P-Plus3')}</li>

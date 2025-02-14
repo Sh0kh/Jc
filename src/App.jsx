@@ -1,25 +1,25 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Helmet, HelmetProvider } from "react-helmet-async"; // SEO
 import "./App.css";
+import "./Style/Media.css";
 import AppLayout from "./layouts/AppLayout";
 import MainLayout from "./layouts/MainLayout";
 import Home from "./Pages/Home";
-import { Helmet, HelmetProvider } from "react-helmet-async"; // Добавлено для SEO
-import './Style/Media.css';
 
 function App() {
   return (
     <HelmetProvider>
       <Router>
         <Helmet>
-          {/* Основные мета-теги для SEO */}
+          {/* 🔥 SEO Оптимизация */}
           <title>ГНБ и Проколы под Землю | Профессиональная Прокладка Труб</title>
           <meta
             name="description"
-            content="ГНБ и проколы под землю с гарантией качества. Прокладка труб, земляные работы и коммуникации от профессионалов. Лучшие услуги ГНБ в Узбекистане."
+            content="ГНБ, прокол, бурение и горизонтально-направленное бурение (ГНБ прокол). Профессиональные услуги по проколу бурению, yer teshish, yer qazish, yer ostidan teshib o'tish. GNB Prokol - эксперты по подземным работам!"
           />
           <meta
             name="keywords"
-            content="ГНБ, проколы под землю, горизонтально-направленное бурение, земляные работы, трубы, прокладка труб"
+            content="ГНБ, прокол, бурение, ГНБ прокол, прокол бурение, ГНБ бурение, yer teshish, yer qazish, yer ostidan teshib o'tish, gnb prokol"
           />
           <meta name="robots" content="index, follow" />
           <meta property="og:title" content="ГНБ и Проколы под Землю | GNB Prokol" />
@@ -36,17 +36,7 @@ function App() {
         </Helmet>
 
         <Routes>
-          {/* hehe */}
-          {/* <Route path="/login" element={<Login />} /> */}
           <Route path="/" element={<AppLayout />}>
-            {/* <Route
-              element={
-                <ProtectedRoute>
-                  <AdminLayout />
-                </ProtectedRoute>
-              }
-            >
-            </Route> */}
             <Route element={<MainLayout />}>
               <Route index element={<Home />} />
             </Route>

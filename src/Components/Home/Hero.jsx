@@ -17,9 +17,14 @@ export default function Hero() {
 
     return (
         <section id='hero' className="Hero bg-[#EFF0F2] ">
-            <h1 data-aos="fade-right">{t('Hero-title')}</h1>
-            <p className='Hero-p'  data-aos="fade-up">{t('Hero-p')}</p>
-            <div className="w-full ">
+            <h1 data-aos="fade-zoom-in"
+                data-aos-delay="200"
+                data-aos-offset="0">{t('Hero-title')}</h1>
+            <p className='Hero-p' data-aos="fade-zoom-in"
+                data-aos-delay="300"
+                data-aos-offset="0">{t('Hero-p')}</p>
+            <div className="w-full" data-aos="fade-up"
+                data-aos-anchor-placement="top-bottom">
                 <img className='HeroImg1 w-full rounded-[10px] mt-[15px] cursor-pointer' src={heroImage} alt="" />
             </div>
             <div className="w-full ">

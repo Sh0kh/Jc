@@ -1,6 +1,8 @@
 import '../../Style/FooterMini.css'
 import { useTranslation } from "react-i18next";
 import '../../i18n/i18n';
+import Aos from 'aos';
+import { useEffect } from 'react';
 
 export default function FooterMini() {
 
@@ -10,8 +12,17 @@ export default function FooterMini() {
         i18n.changeLanguage(lng); // Переключение языка
         setLan(lng)
     };
+
+    useEffect(() => {
+        Aos.init({ duration: 2000 });
+    }, []);
+
     return (
-        <section id='contact' className="footer_mini">
+        <section id='contact' className="footer_mini"
+            data-aos="fade-zoom-in"
+            data-aos-delay="100"
+            data-aos-offset="0"
+        >
             <div className="Container">
                 <div className="footer_mini_wrapper">
                     <div className='FooterCard flex items-center gap-[20px]'>

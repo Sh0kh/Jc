@@ -3,7 +3,7 @@ import ParagraphCard from "../others/ParagraphCard";
 import "../../Style/Paragraph.css";
 import { useTranslation } from "react-i18next";
 import AOS from 'aos';
-import 'aos/dist/aos.css'; 
+import 'aos/dist/aos.css';
 import '../../i18n/i18n'; // Убедитесь, что инициализация i18next вызывается
 
 export default function Paragraph() {
@@ -33,7 +33,11 @@ export default function Paragraph() {
     <section id="work" className="paragraph">
       <div className="Container">
         <div className="paragraph_wrapper">
-          <div className="paragraph_mini">
+          <div className="paragraph_mini"
+            data-aos="fade-right"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine"
+          >
             {items.map((item, index) => (
               <ParagraphCard
                 key={index}
@@ -43,7 +47,11 @@ export default function Paragraph() {
               />
             ))}
           </div>
-          <div className="paragraph_content" >
+          <div className="paragraph_content"
+            data-aos="fade-left"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine"
+          >
             <h1 data-aos="fade-right">{items[activeIndex]}</h1>
             <p >{t('P-Plus1')}</p>
             <ul>

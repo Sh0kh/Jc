@@ -1,16 +1,15 @@
 import CompanyCard from "../others/CompanyCard";
 import { useTranslation } from "react-i18next";
-import '../../i18n/i18n'; 
+import '../../i18n/i18n';
 import '../../Style/BigCompany.css'
+import Aos from "aos";
+import { useEffect } from "react";
 export default function BigCompany() {
-    const { t, i18n } = useTranslation();
-    const lan = localStorage.getItem('i18nextLng')    
-    const changeLanguage = (lng) => {
-        i18n.changeLanguage(lng); // Переключение языка
-        setLan(lng)
-    };
+    const { t } = useTranslation();
+
     return (
-        <section className="big_company">
+        <section className="big_company"
+        >
             <div className="Container">
                 <div className="company_wrapper">
                     <CompanyCard img="https://uzgnb.uz/wp-content/uploads/2021/12/call.png" h4={t('B-Title1')} p={t('B-Plus1')} />

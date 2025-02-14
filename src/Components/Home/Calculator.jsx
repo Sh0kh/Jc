@@ -64,11 +64,12 @@ export default function Calculator() {
 
     // AOS init function
     useEffect(() => {
-        AOS.init({ duration:2000 });
+        AOS.init({ duration: 2000 });
     }, []);
 
     return (
-        <section id="project" className="calculator">
+        <section id="project" className="calculator" data-aos="fade-up"
+            data-aos-duration="3000" >
             <div className="Container">
                 {/* SKFOTO rasmiga scroll bo‘lganda ko‘rinish berish */}
                 <img

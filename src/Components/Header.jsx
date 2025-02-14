@@ -1,22 +1,30 @@
 import { useTranslation } from "react-i18next";
-import '../i18n/i18n'; // Убедитесь, что инициализация i18next вызывается
-// import logo from '../img/logo.png'
+import '../i18n/i18n';
 import '../Style/Header.css'
-import { NavLink, useLocation } from "react-router-dom";
-import { useState } from "react";
 import Headerfoto from '../img/header.png';
+import AOS from 'aos';
+import { useEffect } from "react";
+
 
 export default function Header() {
 
     const { t, i18n } = useTranslation();
-    const lan = localStorage.getItem('i18nextLng')    
+    const lan = localStorage.getItem('i18nextLng')
     const changeLanguage = (lng) => {
-        i18n.changeLanguage(lng); // Переключение языка
+        i18n.changeLanguage(lng);
         setLan(lng)
     };
+    useEffect(() => {
+        AOS.init({ duration: 1000, once: true });
+    }, []);
+
 
     return (
-        <header className="">
+        <header
+            data-aos="fade-down"
+            data-aos-easing="linear"
+            data-aos-duration="800"
+            className="">
             <div className="bg-[#EFF0F2] pt-[10px]" >
                 <div className="Container flex items-center justify-between">
                     <div className="cursor-pointer">

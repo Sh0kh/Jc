@@ -2,8 +2,6 @@ import CompanyCard from "../others/CompanyCard";
 import { useTranslation } from "react-i18next";
 import '../../i18n/i18n';
 import '../../Style/BigCompany.css'
-import Aos from "aos";
-import { useEffect } from "react";
 export default function BigCompany() {
     const { t } = useTranslation();
 
